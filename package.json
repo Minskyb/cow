@@ -1,0 +1,39 @@
+{
+  "name": "cow",
+  "version": "1.0.0",
+  "description": "一个前端常用插件库，遵循 common.js 规范。",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf ./lib ",
+    "build": "npm run clean & babel ./src --out-dir ./lib",
+    "build:example": "rimraf ./example/dist && webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minskyb/cow.git"
+  },
+  "keywords": [
+    "jquery",
+    "plugin"
+  ],
+  "author": "Punk.Li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Minskyb/cow/issues"
+  },
+  "homepage": "https://github.com/Minskyb/cow#readme",
+  "dependencies": {
+    "jquery": "^3.0.0",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.7.6",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.5.0",
+    "rimraf": "^2.5.2",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
