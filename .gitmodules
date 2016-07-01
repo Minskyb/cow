@@ -1,0 +1,3 @@
+[submodule "cowui"]
+	path = cowui
+	url = https://github.com/Minskyb/cowui.git
