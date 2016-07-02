@@ -23,9 +23,9 @@
   },
   "homepage": "https://github.com/Minskyb/cow#readme",
   "dependencies": {
+    "es5-shim": "^4.5.9",
     "jquery": "^3.0.0",
-    "webpack": "^1.13.1",
-    "ie8-bind":"git+https://github.com/Minskyb/ie8-bind.git#bfcf434c8757f232ea9896dd9f16d77015b1231e"
+    "webpack": "^1.13.1"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
