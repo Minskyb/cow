@@ -49,7 +49,7 @@ Modal.prototype._addBackdrop = function(){
 Modal.prototype._hideScrollbar = function(){
 
 	this.$body.addClass("cow_modal_open");
-	var scrollbarWidth = window.outerHeight > window.innerHeight ? 0 :this._measureScrollbar() ;
+	var scrollbarWidth = window.outerHeight >= window.innerHeight ? 0 :this._measureScrollbar() ;
 
 	this.originBodyPaddingRight = parseInt((this.$body.css('padding-right') || 0),10);
 	this.$body.css('padding-right',this.originBodyPaddingRight + scrollbarWidth);
