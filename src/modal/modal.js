@@ -49,7 +49,7 @@ Modal.prototype._addBackdrop = function(){
 Modal.prototype._hideScrollbar = function(){
 
 	this.$body.addClass("cow_modal_open");
-	var scrollbarWidth = window.outerHeight >= window.innerHeight ? 0 :this._measureScrollbar() ;
+	var scrollbarWidth = window.innerHeight >= this.$body.height() ? 0 :this._measureScrollbar() ;
 
 	this.originBodyPaddingRight = parseInt((this.$body.css('padding-right') || 0),10);
 	this.$body.css('padding-right',this.originBodyPaddingRight + scrollbarWidth);
@@ -78,13 +78,13 @@ Modal.prototype.hide = function(_relateTarget){
 
 	this.isShown = false;
 	this.$element.hide();
-	this.$body.removeClass('bt-modal-open');
+	this.$body.removeClass('cow_modal_open');
 	this._resetScrollbar();
 	this._removeBackdrop();
 }
 
 Modal.prototype._resetScrollbar = function(){
-	this.$body.css("padding-left",this.originBodyPaddingRight);
+	this.$body.css("padding-right",this.originBodyPaddingRight);
 }
 
 Modal.prototype._removeBackdrop = function(){
