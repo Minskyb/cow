@@ -6,7 +6,7 @@ var $ = require('jquery');
 
 var Slider = function(element,options){
 
-	this.options = $.extend({},Slider.default,options);
+	this.options = $.extend({},Slider.defaultOptions,options);
 
 	this.$element = $(element);
 	this.$content = $(".cow_slider_content",this.$element);
@@ -53,7 +53,7 @@ var Slider = function(element,options){
 
 }
 
-Slider.default = {
+Slider.defaultOptions = {
 	interval:3000
 }
 
@@ -150,14 +150,14 @@ Slider.prototype._getNextNode = function(type,$active){
 
 function Plugin(elements,options){
 
-	return elements.each(function(){
+	return elements.map(function(){
 		var $this = $(this);
 		var data = $this.data("cow.slider");
 
 		if(!data) $this.data("cow.slider",(data = new Slider(this,options)));
+
+		return data;
 	})
 }
 
-Slider.plugin = Plugin;
-
-module.exports = Slider;
+module.exports = Plugin;

@@ -96,9 +96,9 @@ Modal.prototype.toggle = function(_relateTarget){
 	this.isShown ? this.hide(_relateTarget) : this.show(_relateTarget);
 }
 
-Modal.Plugin = function (elements,options,_relatedTarget) {
+function Plugin(elements,options,_relatedTarget) {
 
-	return elements.each(function(){
+	return elements.map(function(){
 		var $this = $(this);
 		var data = $this.data("cow.modal");
 		if(!data) $this.data("cow.modal",(data = new Modal(this,options)));
@@ -106,6 +106,8 @@ Modal.Plugin = function (elements,options,_relatedTarget) {
 		if(typeof options == 'string') data[options](_relatedTarget);
 		else if (options.show)
 			data.show(_relatedTarget);
+
+		return data;
 	})
 }
 
@@ -118,8 +120,8 @@ $(document.body).on('click.auto-init.cow.modal','[data-toggle="modal"]',function
 
 	if($this.is('a')) e.preventDefault();
 
-	Modal.Plugin($target,options,this);
+	Plugin($target,options,this);
 
 });
 
-module.exports = Modal
+module.exports = Plugin
