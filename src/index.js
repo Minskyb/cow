@@ -4,5 +4,5 @@
 var Modal = require('./modal');
 
 module.exports = {
-	Modal
+	Modal:Modal
 };
